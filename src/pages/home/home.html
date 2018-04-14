@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="background" >
+ <ion-card>
+   <ion-card-header>
+     Login Form
+   </ion-card-header>
+   <ion-card-content>
+     <ion-list no-line>
+       <ion-item>
+         <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
+       </ion-item>
+       <ion-item>
+          <ion-input type="text" placeholder="Password"></ion-input>
+        </ion-item>
+     </ion-list>
+    
+  <button ion-button block outline color="light" (click)='dataValid()' round>Login</button><br>
+  <a>Forgot your login details ?<b>Get help Signing In</b></a>
+  <button ion-button block outline color="light" (click)='myFunction()' round>Signup</button>
+
+    </ion-card-content>
+

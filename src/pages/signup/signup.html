@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Signup
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="background" >
+    <ion-card>
+      <ion-card-header>
+       Signup Form
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list no-line>
+            <ion-item>
+                <ion-input type="text" placeholder="UserName" [(ngModel)]="userName"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
+                </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Password" [(ngModel)]="Password"></ion-input>
+          </ion-item>
+          <ion-item>
+             <ion-input type="text" placeholder="Confirm-Password" [(ngModel)]="confirmPassword"></ion-input>
+           </ion-item>
+        </ion-list>
+     <button ion-button block outline color="light" (click)='register()' round>SignUp</button><br>
+   
+       </ion-card-content>
