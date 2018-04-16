@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { FormsModule } from '@angular/forms';
 //import { Data } from '../provider/data/data';
 //import { HTTP } from '@ionic-native/http';
 
@@ -10,6 +11,10 @@ import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import { HomePage } from '../pages/home/home';
 import { Signup } from '../pages/signup/signup';
+import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
+
+//import { LoginPage } from '../pages/login/login';
+
 import { UserDataServiceProvider } from '../providers/user-data-service/user-data-service';
 import { ProfilePage } from '../pages/profile/profile';
 
@@ -18,7 +23,9 @@ import { ProfilePage } from '../pages/profile/profile';
     MyApp,
     HomePage,
     Signup,
-    ProfilePage
+    ProfilePage,
+    ForgotPasswordPage
+   // LoginPage
   
   ],
   imports: [
@@ -31,7 +38,9 @@ import { ProfilePage } from '../pages/profile/profile';
     MyApp,
     HomePage,
     Signup,
-    ProfilePage
+    ProfilePage,
+   ForgotPasswordPage
+   // LoginPage
    
   ],
   providers: [
@@ -39,7 +48,7 @@ import { ProfilePage } from '../pages/profile/profile';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserDataServiceProvider,
-   // Data
+
   ]
 })
 export class AppModule {}

@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { Signup } from '../signup/signup';
 import { ProfilePage } from '../profile/profile';
+import { ForgotPasswordPage } from '../forgot-password/forgot-password';
+//import { LoginPage } from '../login/login'
+
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AlertController } from 'ionic-angular';
@@ -23,6 +26,11 @@ constructor(public navCtrl: NavController,
             public http: Http, 
             public alertCtrl: AlertController,
             public userService : UserDataServiceProvider) {}
+            
+            myForgot(){ 
+              this.navCtrl.push(ForgotPasswordPage);
+            }
+       
 
   myFunction() {
     this.navCtrl.push(Signup);
@@ -38,7 +46,7 @@ constructor(public navCtrl: NavController,
           console.log(JSON.stringify(data));
           console.log(JSON.stringify(data.name));
           sessionStorage.setItem('user',userData.email)
-          this.navCtrl.push(ProfilePage);
+         this.navCtrl.push(ProfilePage);
       },
       err => {
           console.log(err);

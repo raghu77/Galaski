@@ -1,0 +1,17 @@
+<ion-navbar *navbar>
+  <ion-title>Login In</ion-title>
+</ion-navbar>
+
+<ion-content padding class="login">
+  <form class="list" [ngFormModel]="loginForm" (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" ngControl="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" ngControl="password"></ion-input>
+    </ion-item>
+    <button type="submit" block>Login</button>
+  </form>
+</ion-content>

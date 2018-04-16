@@ -1,10 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
 import { HttpHeaders } from '@angular/common/http'
-import 'rxjs/observable/throw';
-import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserDataServiceProvider {
