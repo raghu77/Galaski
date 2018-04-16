@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
+import 'rxjs/add/operator/map';
 import { HttpHeaders } from '@angular/common/http'
+import 'rxjs/observable/throw';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserDataServiceProvider {
@@ -30,6 +33,26 @@ export class UserDataServiceProvider {
 
 
   login(userdata) {
+    alert(JSON.stringify(userdata))
+    var headers: Headers = new Headers();
+    headers.set("authorization", "Bearer " + this.token);
+
+    let body = new FormData();
+    body.append('email', userdata.email);
+    body.append('mode', "socialMedia");
+    body.append('type', "signIn");
+    body.append("deviceId", "7193B120-5E28-4DEE-8FBB-25936ECD10AA");
+
+    let options = new RequestOptions({
+      headers: headers
+    });
+
+    var url = 'https://appshostosi.com/devapi/users';
+    var response = this.http.put(url, body, options).map(res => res.json());
+    return response;
+  }
+
+  forgot(userdata) {
     alert(JSON.stringify(userdata))
     var headers: Headers = new Headers();
     headers.set("authorization", "Bearer " + this.token);

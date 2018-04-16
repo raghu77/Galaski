@@ -5,25 +5,42 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content class="background" >
- <ion-card>
-   <ion-card-header>
-     Login Form
-   </ion-card-header>
-   <ion-card-content>
-     <ion-list no-line>
-       <ion-item>
-         <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
-       </ion-item>
-       <ion-item>
-          <ion-input type="text" placeholder="Password"></ion-input>
-        </ion-item>
-     </ion-list>
-    
-  <button ion-button block outline color="light" (click)='dataValid()' round>Login</button><br>
-  <p>Forgot your login details? </p>
-  <button ion-button color="danger" (click)='myForgot()' clear><b>Getting Signing here</b></button>
-  <button ion-button block outline color="light" (click)='myFunction()' round>Signup</button>
+<ion-content class="background">
+  <ion-card>
+    <ion-card-header>
+      Login Form
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list no-line>
+        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+          <ion-item>
+            <ion-input type="text" placeholder="Enter Email" formControlName="email"></ion-input>
+          </ion-item>
+          <div class="error" *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched">
+            email is required
+          </div>
+
+          <div class="error" *ngIf="loginForm.get('email').hasError('email') && loginForm.get('email').touched">
+            Please enter valid email
+          </div>
+          <ion-item>
+            <ion-input type="password" placeholder="Enter Password" formControlName="password"></ion-input>
+          </ion-item>
+          <div class="error" *ngIf="loginForm.get('password').hasError('minlength') && loginForm.get('password').touched">
+            Minimum of 8 characters
+          </div>
+          <!-- <div class="error" *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
+              password is required
+            </div> -->
+          <button type="submit" ion-button block outline color="light" round>Login</button>
+        </form>
+      </ion-list>
+
+      <br>
+      <a (click)="forget()">Forgot your login details ?
+        <b>Get help Signing In</b>
+      </a>
+      <button ion-button block outline color="light" (click)='myFunction()' round>Signup</button>
 
     </ion-card-content>
 

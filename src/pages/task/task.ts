@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ForgotPasswordPage page.
+ * Generated class for the TaskPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,18 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-forgot-password',
-  templateUrl: 'forgot-password.html',
+  selector: 'page-task',
+  templateUrl: 'task.html',
 })
-export class ForgotPasswordPage {
+export class TaskPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  dataValid(){
 
-  }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ForgotPasswordPage');
+    console.log('ionViewDidLoad TaskPage');
   }
 
 }
